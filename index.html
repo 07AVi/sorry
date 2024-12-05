@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Will You Date Me?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffe4e1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      text-align: center;
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    h1 {
+      color: #ff69b4;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      margin: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    button:hover {
+      opacity: 0.9;
+    }
+    #yes {
+      background-color: #28a745;
+      color: white;
+    }
+    #no {
+      background-color: #dc3545;
+      color: white;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Will You forgive me?</h1>
+    <button id="yes">Yes ❤️</button>
+    <button id="no">No 😢</button>
+  </div>
+
+  <script>
+    const noButton = document.getElementById('no');
+    const yesButton = document.getElementById('yes');
+
+    noButton.addEventListener('mouseover', () => {
+      // Generate random positions for the "No" button
+      const randomX = Math.floor(Math.random() * (window.innerWidth - noButton.offsetWidth));
+      const randomY = Math.floor(Math.random() * (window.innerHeight - noButton.offsetHeight));
+      
+      noButton.style.position = 'absolute';
+      noButton.style.left = `${randomX}px`;
+      noButton.style.top = `${randomY}px`;
+    });
+
+    yesButton.addEventListener('click', () => {
+      alert("Yay! I knew you'd say yes! 🥰");
+    });
+  </script>
+</body>
+</html>
